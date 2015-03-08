@@ -17,4 +17,8 @@
     
     <!-- 0x067B / 0x2303: Prolific PL2303 -->
     <usb-device vendor-id="1659" product-id="8963" />
+
+    <!-- DyIO 04d8:3742  -->
+    <usb-device vendor-id="1240" product-id="14146" />
+
 </resources>
