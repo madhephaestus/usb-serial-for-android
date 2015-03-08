@@ -21,4 +21,8 @@
     <!-- DyIO 04d8:3742  -->
     <usb-device vendor-id="1240" product-id="14146" />
 
+    <!-- Bowler Board 04d8:0001  -->
+    <usb-device vendor-id="1240" product-id="1" />
+
+
 </resources>
