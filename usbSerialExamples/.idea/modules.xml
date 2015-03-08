@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/nrsdk-core/nrsdk-core.iml" filepath="$PROJECT_DIR$/nrsdk-core/nrsdk-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/usbSerialExamples.iml" filepath="$PROJECT_DIR$/usbSerialExamples.iml" />
       <module fileurl="file://$PROJECT_DIR$/usbSerialForAndroid/usbSerialForAndroid.iml" filepath="$PROJECT_DIR$/usbSerialForAndroid/usbSerialForAndroid.iml" />
     </modules>

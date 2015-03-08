@@ -1,1 +1,1 @@
-include ':usbSerialForAndroid'
+include ':usbSerialForAndroid', ':nrsdk-core'
