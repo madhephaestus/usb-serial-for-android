@@ -28,4 +28,6 @@ android {
 
 dependencies {
     compile project(':usbSerialForAndroid' )
+    compile project( ':nrsdk-core')
+    compile files( 'nrsdk-core/nrsdk-3.10.0-core.jar' )
 }

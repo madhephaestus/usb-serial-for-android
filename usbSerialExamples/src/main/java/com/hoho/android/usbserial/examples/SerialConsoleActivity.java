@@ -34,10 +34,13 @@ import android.widget.TextView;
 import com.hoho.android.usbserial.driver.UsbSerialPort;
 import com.hoho.android.usbserial.util.HexDump;
 import com.hoho.android.usbserial.util.SerialInputOutputManager;
+import com.neuronrobotics.sdk.common.BowlerAbstractDevice;
+import com.neuronrobotics.sdk.common.BowlerDatagram;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 
 /**
  * Monitors a single {@link UsbSerialPort} instance, showing all data
@@ -64,29 +67,30 @@ public class SerialConsoleActivity extends Activity {
     private TextView mTitleTextView;
     private TextView mDumpTextView;
     private ScrollView mScrollView;
+    private BowlerAndroidUSB bowler ;
 
-    private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
+    //private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
 
     private SerialInputOutputManager mSerialIoManager;
 
-    private final SerialInputOutputManager.Listener mListener =
-            new SerialInputOutputManager.Listener() {
-
-        @Override
-        public void onRunError(Exception e) {
-            Log.d(TAG, "Runner stopped.");
-        }
-
-        @Override
-        public void onNewData(final byte[] data) {
-            SerialConsoleActivity.this.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    SerialConsoleActivity.this.updateReceivedData(data);
-                }
-            });
-        }
-    };
+//    private final SerialInputOutputManager.Listener mListener =
+//            new SerialInputOutputManager.Listener() {
+//
+//        @Override
+//        public void onRunError(Exception e) {
+//            Log.d(TAG, "Runner stopped.");
+//        }
+//
+//        @Override
+//        public void onNewData(final byte[] data) {
+//            SerialConsoleActivity.this.runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    SerialConsoleActivity.this.updateReceivedData(data);
+//                }
+//            });
+//        }
+//    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -130,6 +134,7 @@ public class SerialConsoleActivity extends Activity {
             try {
                 sPort.open(connection);
                 sPort.setParameters(115200, 8, UsbSerialPort.STOPBITS_1, UsbSerialPort.PARITY_NONE);
+
             } catch (IOException e) {
                 Log.e(TAG, "Error setting up device: " + e.getMessage(), e);
                 mTitleTextView.setText("Error opening device: " + e.getMessage());
@@ -141,24 +146,30 @@ public class SerialConsoleActivity extends Activity {
                 sPort = null;
                 return;
             }
-            mTitleTextView.setText("Serial device: " + sPort.getClass().getSimpleName());
+            mTitleTextView.setText("Bowler Ping: " + sPort.getClass().getSimpleName());
         }
         onDeviceStateChange();
     }
 
     private void stopIoManager() {
-        if (mSerialIoManager != null) {
+        if (bowler != null) {
             Log.i(TAG, "Stopping io manager ..");
-            mSerialIoManager.stop();
-            mSerialIoManager = null;
+            bowler.disconnect();
         }
     }
 
     private void startIoManager() {
         if (sPort != null) {
             Log.i(TAG, "Starting io manager ..");
-            mSerialIoManager = new SerialInputOutputManager(sPort, mListener);
-            mExecutor.submit(mSerialIoManager);
+            bowler = new BowlerAndroidUSB(sPort);
+            bowler.connect();
+            bowler.addDatagramListener(new BowlerAbstractDevice() {
+                @Override
+                public void onAsyncResponse(BowlerDatagram bowlerDatagram) {
+                    updateReceivedData(bowlerDatagram.toString().getBytes());
+                }
+            });
+            mDumpTextView.append("Ping: "+bowler.ping(null));
         }
     }
 
@@ -172,6 +183,10 @@ public class SerialConsoleActivity extends Activity {
                 + HexDump.dumpHexString(data) + "\n\n";
         mDumpTextView.append(message);
         mScrollView.smoothScrollTo(0, mDumpTextView.getBottom());
+    }
+
+    public String getTAG() {
+        return TAG;
     }
 
     /**

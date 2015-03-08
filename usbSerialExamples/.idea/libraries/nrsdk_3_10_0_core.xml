@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="nrsdk-3.10.0-core">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/nrsdk-core/nrsdk-3.10.0-core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
