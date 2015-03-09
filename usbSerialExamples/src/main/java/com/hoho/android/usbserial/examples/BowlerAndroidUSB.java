@@ -29,7 +29,7 @@ public class BowlerAndroidUSB extends BowlerAbstractConnection{
 
     public BowlerAndroidUSB(UsbSerialPort sPort) {
         this.sPort =sPort;
-
+        setUseThreadedStack(true);
     }
 
     public boolean connect(){
@@ -81,18 +81,22 @@ public class BowlerAndroidUSB extends BowlerAbstractConnection{
 	@Override
 	public boolean loadPacketFromPhy(ByteList bytesToPacketBuffer) throws NullPointerException, IOException{
                 // Handle incoming data.
-        int len = sPort.read(mReadBuffer, READ_WAIT_MILLIS);
-        if (len > 0) {
-            for(int i=0;i<len;i++) {
-               bytesToPacketBuffer.add( mReadBuffer[i]);
+        try {
+            int len = sPort.read(mReadBuffer, READ_WAIT_MILLIS);
+            if (len > 0) {
+                for (int i = 0; i < len; i++) {
+                    bytesToPacketBuffer.add(mReadBuffer[i]);
+                }
             }
-        }
-        BowlerDatagram bd = BowlerDatagramFactory.build(bytesToPacketBuffer);
-        if (bd!=null) {
+            BowlerDatagram bd = BowlerDatagramFactory.build(bytesToPacketBuffer);
+            if (bd != null) {
 //				Log.info("\nR<<"+bd);
-            onDataReceived(bd);
+                onDataReceived(bd);
 
-            return true;
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
 		return false;

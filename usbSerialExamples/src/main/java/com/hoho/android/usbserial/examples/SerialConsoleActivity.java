@@ -34,11 +34,16 @@ import android.widget.TextView;
 import com.hoho.android.usbserial.driver.UsbSerialPort;
 import com.hoho.android.usbserial.util.HexDump;
 import com.hoho.android.usbserial.util.SerialInputOutputManager;
+import com.neuronrobotics.sdk.common.BowlerAbstractConnection;
 import com.neuronrobotics.sdk.common.BowlerAbstractDevice;
 import com.neuronrobotics.sdk.common.BowlerDatagram;
+import com.neuronrobotics.sdk.common.IConnectionEventListener;
 import com.neuronrobotics.sdk.dyio.DyIO;
+import com.neuronrobotics.sdk.dyio.DyIOChannelEvent;
 import com.neuronrobotics.sdk.dyio.IDyIOEvent;
 import com.neuronrobotics.sdk.dyio.IDyIOEventListener;
+import com.neuronrobotics.sdk.dyio.peripherals.DigitalInputChannel;
+import com.neuronrobotics.sdk.dyio.peripherals.IDigitalInputListener;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
@@ -72,7 +77,7 @@ public class SerialConsoleActivity extends Activity {
     private ScrollView mScrollView;
     private DyIO bowler ;
 
-    //private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
+    private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
 
     private SerialInputOutputManager mSerialIoManager;
 
@@ -164,18 +169,36 @@ public class SerialConsoleActivity extends Activity {
     private void startIoManager() {
         if (sPort != null) {
             Log.i(TAG, "Starting io manager ..");
-            bowler = new DyIO(new BowlerAndroidUSB(sPort));
-            bowler.connect();
-            bowler.addDyIOEventListener(new IDyIOEventListener() {
+            runOnUiThread( new Runnable() {
                 @Override
-                public void onDyIOEvent(IDyIOEvent e) {
+                public void run() {
+                    if(bowler!=null){
+                        bowler.disconnect();
+                    }
+                    bowler = new DyIO(new BowlerAndroidUSB(sPort));
+                    bowler.addConnectionEventListener(new IConnectionEventListener() {
+                        @Override
+                        public void onDisconnect(BowlerAbstractConnection source) {
+                            updateReceivedData("Disconnect "+source);
+                        }
 
-                    updateReceivedData(e.toString());
+                        @Override
+                        public void onConnect(BowlerAbstractConnection source) {
+                            updateReceivedData("Connect "+source);
+                        }
+                    });
+                    bowler.connect();
+                    new DigitalInputChannel(bowler,12).addDigitalInputListener(new IDigitalInputListener() {
+                        @Override
+                        public void onDigitalValueChange(DigitalInputChannel source, boolean isHigh) {
+
+                           updateReceivedData("Chan: "+source.getChannel()+" value: "+isHigh);
+                        }
+                    });
+                    mDumpTextView.append("Ping: "+bowler.ping());
                 }
             });
 
-
-            mDumpTextView.append("Ping: "+bowler.ping());
         }
     }
 
@@ -184,10 +207,16 @@ public class SerialConsoleActivity extends Activity {
         startIoManager();
     }
 
-    private void updateReceivedData(String data) {
+    private void updateReceivedData(final String data) {
+        runOnUiThread( new Runnable() {
+            @Override
+            public void run() {
+                mDumpTextView.append("\r\n"+data);
+                mScrollView.smoothScrollTo(0, mDumpTextView.getBottom());
+            }
+        });
 
-        mDumpTextView.append(data);
-        mScrollView.smoothScrollTo(0, mDumpTextView.getBottom());
+
     }
 
     public String getTAG() {

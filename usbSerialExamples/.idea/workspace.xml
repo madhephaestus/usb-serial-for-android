@@ -20,11 +20,7 @@
     <list default="true" id="79345a8f-0154-4ce8-bb3d-13e639a88614" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java" afterPath="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/modules.xml" afterPath="$PROJECT_DIR$/../.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/nrsdk_3_10_0_core.xml" afterPath="$PROJECT_DIR$/.idea/libraries/nrsdk_3_10_0_core.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="usbSerialExamples.iws" />
@@ -51,23 +47,10 @@
       <file leaf-file-name="BowlerAndroidUSB.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1650">
-              <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1710">
+              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BowlerAbstractConnection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/common/BowlerAbstractConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6155" max-vertical-offset="17865">
-              <caret line="442" column="17" selection-start-line="442" selection-start-column="17" selection-end-line="442" selection-end-column="17" />
-              <folding>
-                <element signature="e#32336#32337#0" expanded="true" />
-                <element signature="e#32364#32365#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,9 +59,22 @@
       <file leaf-file-name="DeviceListActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/DeviceListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2910" max-vertical-offset="3180">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="2340">
               <caret line="194" column="46" selection-start-line="194" selection-start-column="46" selection-end-line="194" selection-end-column="46" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BowlerAbstractConnection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/common/BowlerAbstractConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3780" max-vertical-offset="17865">
+              <caret line="1253" column="39" selection-start-line="1253" selection-start-column="39" selection-end-line="1253" selection-end-column="39" />
+              <folding>
+                <element signature="e#32336#32337#0" expanded="true" />
+                <element signature="e#32364#32365#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,21 +82,28 @@
       <file leaf-file-name="SerialConsoleActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45679012" vertical-offset="1710" max-vertical-offset="2925">
-              <caret line="170" column="41" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.45679012" vertical-offset="1995" max-vertical-offset="3390">
+              <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5936#5937#0" expanded="true" />
+                <element signature="e#5968#7281#0" expanded="true" />
+                <element signature="e#6871#7181#0" expanded="true" />
+                <element signature="e#7158#7159#0" expanded="true" />
+                <element signature="e#7266#7267#0" expanded="true" />
+                <element signature="e#7481#7700#0" expanded="true" />
+                <element signature="e#7689#7690#0" expanded="true" />
+                <element signature="e#7739#7740#0" expanded="true" />
+                <element signature="e#7765#7766#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SerialInputOutputManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usbSerialForAndroid/src/main/java/com/hoho/android/usbserial/util/SerialInputOutputManager.java">
+      <file leaf-file-name="DyIO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/dyio/DyIO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2445">
-              <caret line="158" column="8" selection-start-line="158" selection-start-column="8" selection-end-line="158" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="9230" max-vertical-offset="17625">
+              <caret line="736" column="63" selection-start-line="736" selection-start-column="47" selection-end-line="736" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -1153,8 +1156,8 @@
         <option value="$PROJECT_DIR$/usbSerialForAndroid/src/main/java/com/hoho/android/usbserial/driver/CdcAcmSerialDriver.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java" />
         <option value="$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/common/BowlerAbstractConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java" />
       </list>
     </option>
@@ -1474,7 +1477,11 @@
       <created>1425844985174</created>
       <updated>1425844985174</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="DyIO object is being created and ping events are working">
+      <created>1425915324996</created>
+      <updated>1425915324996</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1495,7 +1502,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3034212" sideWeight="0.81088084" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3034212" sideWeight="0.81088084" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18825561" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931158" sideWeight="0.6871287" order="14" side_tool="true" content_ui="tabs" />
@@ -1528,7 +1535,8 @@
     </option>
     <MESSAGE value="moving the activity files into the build directory" />
     <MESSAGE value="adding the NRSDK" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding the NRSDK" />
+    <MESSAGE value="DyIO object is being created and ping events are working" />
+    <option name="LAST_COMMIT_MESSAGE" value="DyIO object is being created and ping events are working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1568,7 +1576,14 @@
           <caret line="177" column="25" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
+            <element signature="e#5968#7281#0" expanded="true" />
+            <element signature="e#6871#7181#0" expanded="true" />
+            <element signature="e#7158#7159#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#7481#7700#0" expanded="true" />
+            <element signature="e#7689#7690#0" expanded="true" />
+            <element signature="e#7739#7740#0" expanded="true" />
+            <element signature="e#7765#7766#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1613,7 +1628,14 @@
           <caret line="177" column="25" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
+            <element signature="e#5968#7281#0" expanded="true" />
+            <element signature="e#6871#7181#0" expanded="true" />
+            <element signature="e#7158#7159#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#7481#7700#0" expanded="true" />
+            <element signature="e#7689#7690#0" expanded="true" />
+            <element signature="e#7739#7740#0" expanded="true" />
+            <element signature="e#7765#7766#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1741,14 +1763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/DeviceListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="564" max-vertical-offset="1500">
-          <caret line="194" column="46" selection-start-line="194" selection-start-column="46" selection-end-line="194" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usbSerialForAndroid/src/main/java/com/hoho/android/usbserial/driver/UsbSerialPort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37037036" vertical-offset="1065" max-vertical-offset="3180">
@@ -1770,27 +1784,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="365" max-vertical-offset="2535">
           <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/common/BowlerAbstractConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6155" max-vertical-offset="17865">
-          <caret line="442" column="17" selection-start-line="442" selection-start-column="17" selection-end-line="442" selection-end-column="17" />
-          <folding>
-            <element signature="e#32336#32337#0" expanded="true" />
-            <element signature="e#32364#32365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1650">
-          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1818,13 +1811,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java">
+    <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/dyio/DyIOChannelEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45679012" vertical-offset="1710" max-vertical-offset="2925">
-          <caret line="170" column="41" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.12345679" vertical-offset="0" max-vertical-offset="1305">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/dyio/DyIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9230" max-vertical-offset="17625">
+          <caret line="736" column="63" selection-start-line="736" selection-start-column="47" selection-end-line="736" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/DeviceListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="564" max-vertical-offset="1500">
+          <caret line="194" column="46" selection-start-line="194" selection-start-column="46" selection-end-line="194" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/common/BowlerAbstractConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="17865">
+          <caret line="1253" column="39" selection-start-line="1253" selection-start-column="39" selection-end-line="1253" selection-end-column="39" />
+          <folding>
+            <element signature="e#32336#32337#0" expanded="true" />
+            <element signature="e#32364#32365#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1710">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45679012" vertical-offset="1995" max-vertical-offset="3390">
+          <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5968#7281#0" expanded="true" />
+            <element signature="e#6871#7181#0" expanded="true" />
+            <element signature="e#7158#7159#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#7481#7700#0" expanded="true" />
+            <element signature="e#7689#7690#0" expanded="true" />
+            <element signature="e#7739#7740#0" expanded="true" />
+            <element signature="e#7765#7766#0" expanded="true" />
           </folding>
         </state>
       </provider>
