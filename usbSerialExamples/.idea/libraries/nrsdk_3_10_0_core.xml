@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/nrsdk-core/nrsdk-3.10.0-core.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src" />
+    </SOURCES>
   </library>
 </component>

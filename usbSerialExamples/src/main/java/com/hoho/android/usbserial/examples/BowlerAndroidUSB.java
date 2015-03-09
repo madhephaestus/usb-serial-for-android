@@ -25,10 +25,7 @@ public class BowlerAndroidUSB extends BowlerAbstractConnection{
     private static final int READ_WAIT_MILLIS = 200;
     private static final int BUFSIZ = 4096;
 
-    private final ByteBuffer mReadBuffer = ByteBuffer.allocate(BUFSIZ);
-
-    // Synchronized by 'mWriteBuffer'
-    private final ByteBuffer mWriteBuffer = ByteBuffer.allocate(BUFSIZ);
+    private final byte[] mReadBuffer = new byte[BUFSIZ];
 
     public BowlerAndroidUSB(UsbSerialPort sPort) {
         this.sPort =sPort;
@@ -47,8 +44,10 @@ public class BowlerAndroidUSB extends BowlerAbstractConnection{
 	 */
 	@Override
 	public DataInputStream getDataIns() throws NullPointerException{
-		new RuntimeException("This method should not be called").printStackTrace();
-		while(true);
+
+		while(true){
+            new RuntimeException("This method should not be called").printStackTrace();
+        }
 	}
 
 	/**
@@ -58,30 +57,21 @@ public class BowlerAndroidUSB extends BowlerAbstractConnection{
 	 */
 	@Override
 	public DataOutputStream getDataOuts() throws NullPointerException{
-		new RuntimeException("This method should not be called").printStackTrace();
-		while(true);
+
+		while(true){
+            new RuntimeException("This method should not be called").printStackTrace();
+        }
 	}
 
 	/**
 	 * Write.
 	 *
-	 * @param data the data
+	 * @param outBuff the data
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	//private ByteList outgoing = new ByteList();
-	public void write(byte[] data) throws IOException {
-        // Handle outgoing data.
-        int len;
-        byte[] outBuff = null;
-        synchronized (mWriteBuffer) {
-            len = mWriteBuffer.position();
-            if (len > 0) {
-                outBuff = new byte[len];
-                mWriteBuffer.rewind();
-                mWriteBuffer.get(outBuff, 0, len);
-                mWriteBuffer.clear();
-            }
-        }
+	public void write(byte[] outBuff) throws IOException {
+
         if (outBuff != null) {
             sPort.write(outBuff, READ_WAIT_MILLIS);
         }
@@ -91,23 +81,18 @@ public class BowlerAndroidUSB extends BowlerAbstractConnection{
 	@Override
 	public boolean loadPacketFromPhy(ByteList bytesToPacketBuffer) throws NullPointerException, IOException{
                 // Handle incoming data.
-        int len = sPort.read(mReadBuffer.array(), READ_WAIT_MILLIS);
+        int len = sPort.read(mReadBuffer, READ_WAIT_MILLIS);
         if (len > 0) {
-
-            final byte[] data = new byte[len];
-            mReadBuffer.get(data, 0, len);
-
-            bytesToPacketBuffer.add(data);
-            mReadBuffer.clear();
-
-		    BowlerDatagram bd = BowlerDatagramFactory.build(bytesToPacketBuffer);
-			if (bd!=null) {
+            for(int i=0;i<len;i++) {
+               bytesToPacketBuffer.add( mReadBuffer[i]);
+            }
+        }
+        BowlerDatagram bd = BowlerDatagramFactory.build(bytesToPacketBuffer);
+        if (bd!=null) {
 //				Log.info("\nR<<"+bd);
-				onDataReceived(bd);
+            onDataReceived(bd);
 
-				return true;
-			}
-
+            return true;
         }
 
 		return false;

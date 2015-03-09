@@ -36,6 +36,9 @@ import com.hoho.android.usbserial.util.HexDump;
 import com.hoho.android.usbserial.util.SerialInputOutputManager;
 import com.neuronrobotics.sdk.common.BowlerAbstractDevice;
 import com.neuronrobotics.sdk.common.BowlerDatagram;
+import com.neuronrobotics.sdk.dyio.DyIO;
+import com.neuronrobotics.sdk.dyio.IDyIOEvent;
+import com.neuronrobotics.sdk.dyio.IDyIOEventListener;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
@@ -67,7 +70,7 @@ public class SerialConsoleActivity extends Activity {
     private TextView mTitleTextView;
     private TextView mDumpTextView;
     private ScrollView mScrollView;
-    private BowlerAndroidUSB bowler ;
+    private DyIO bowler ;
 
     //private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
 
@@ -161,15 +164,18 @@ public class SerialConsoleActivity extends Activity {
     private void startIoManager() {
         if (sPort != null) {
             Log.i(TAG, "Starting io manager ..");
-            bowler = new BowlerAndroidUSB(sPort);
+            bowler = new DyIO(new BowlerAndroidUSB(sPort));
             bowler.connect();
-            bowler.addDatagramListener(new BowlerAbstractDevice() {
+            bowler.addDyIOEventListener(new IDyIOEventListener() {
                 @Override
-                public void onAsyncResponse(BowlerDatagram bowlerDatagram) {
-                    updateReceivedData(bowlerDatagram.toString().getBytes());
+                public void onDyIOEvent(IDyIOEvent e) {
+
+                    updateReceivedData(e.toString());
                 }
             });
-            mDumpTextView.append("Ping: "+bowler.ping(null));
+
+
+            mDumpTextView.append("Ping: "+bowler.ping());
         }
     }
 
@@ -178,10 +184,9 @@ public class SerialConsoleActivity extends Activity {
         startIoManager();
     }
 
-    private void updateReceivedData(byte[] data) {
-        final String message = "Read " + data.length + " bytes: \n"
-                + HexDump.dumpHexString(data) + "\n\n";
-        mDumpTextView.append(message);
+    private void updateReceivedData(String data) {
+
+        mDumpTextView.append(data);
         mScrollView.smoothScrollTo(0, mDumpTextView.getBottom());
     }
 
