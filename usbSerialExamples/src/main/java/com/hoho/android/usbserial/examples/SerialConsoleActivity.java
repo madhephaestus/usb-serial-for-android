@@ -40,12 +40,17 @@ import com.neuronrobotics.sdk.common.BowlerDatagram;
 import com.neuronrobotics.sdk.common.IConnectionEventListener;
 import com.neuronrobotics.sdk.dyio.DyIO;
 import com.neuronrobotics.sdk.dyio.DyIOChannelEvent;
+import com.neuronrobotics.sdk.dyio.DyIOChannelMode;
 import com.neuronrobotics.sdk.dyio.IDyIOEvent;
 import com.neuronrobotics.sdk.dyio.IDyIOEventListener;
+import com.neuronrobotics.sdk.dyio.peripherals.AnalogInputChannel;
 import com.neuronrobotics.sdk.dyio.peripherals.DigitalInputChannel;
+import com.neuronrobotics.sdk.dyio.peripherals.DyIOAbstractPeripheral;
+import com.neuronrobotics.sdk.dyio.peripherals.IAnalogInputListener;
 import com.neuronrobotics.sdk.dyio.peripherals.IDigitalInputListener;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -76,7 +81,7 @@ public class SerialConsoleActivity extends Activity {
     private TextView mDumpTextView;
     private ScrollView mScrollView;
     private DyIO bowler ;
-
+    private ArrayList<DyIOAbstractPeripheral> dap = new ArrayList<DyIOAbstractPeripheral>();
     private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
 
     private SerialInputOutputManager mSerialIoManager;
@@ -169,33 +174,52 @@ public class SerialConsoleActivity extends Activity {
     private void startIoManager() {
         if (sPort != null) {
             Log.i(TAG, "Starting io manager ..");
-            runOnUiThread( new Runnable() {
+            runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if(bowler!=null){
+                    if (bowler != null) {
                         bowler.disconnect();
                     }
                     bowler = new DyIO(new BowlerAndroidUSB(sPort));
                     bowler.addConnectionEventListener(new IConnectionEventListener() {
                         @Override
                         public void onDisconnect(BowlerAbstractConnection source) {
-                            updateReceivedData("Disconnect "+source);
+                            updateReceivedData("Disconnect " + source);
                         }
 
                         @Override
                         public void onConnect(BowlerAbstractConnection source) {
-                            updateReceivedData("Connect "+source);
+                            updateReceivedData("Connect " + source);
                         }
                     });
                     bowler.connect();
-                    new DigitalInputChannel(bowler,12).addDigitalInputListener(new IDigitalInputListener() {
-                        @Override
-                        public void onDigitalValueChange(DigitalInputChannel source, boolean isHigh) {
+                    for (int i = 0; i < bowler.getDyIOChannelCount(); i++) {
+                        DyIOChannelMode mode = bowler.getChannel(i).getCurrentMode();
+                        if (mode==DyIOChannelMode.DIGITAL_IN) {
+                            DigitalInputChannel chan = new DigitalInputChannel(bowler, i);
+                            chan.addDigitalInputListener(new IDigitalInputListener() {
+                                @Override
+                                public void onDigitalValueChange(DigitalInputChannel source, boolean isHigh) {
 
-                           updateReceivedData("Chan: "+source.getChannel()+" value: "+isHigh);
+                                    updateReceivedData("Chan: " + source.getChannel() + " value: " + isHigh);
+                                }
+                            });
+                            dap.add(chan);
                         }
-                    });
-                    mDumpTextView.append("Ping: "+bowler.ping());
+                        if (mode==DyIOChannelMode.ANALOG_IN) {
+                            AnalogInputChannel chan = new AnalogInputChannel(bowler, i);
+                            chan.addAnalogInputListener(
+                                    new IAnalogInputListener() {
+                                        @Override
+                                        public void onAnalogValueChange(AnalogInputChannel chan, double value) {
+                                             updateReceivedData("Chan: " + chan.getChannel() + " value: " + chan.getVoltage());
+                                        }
+                                    }
+                            );
+                            dap.add(chan);
+                        }
+                    }
+                    mDumpTextView.append("Ping: " + bowler.ping());
                 }
             });
 
@@ -208,10 +232,10 @@ public class SerialConsoleActivity extends Activity {
     }
 
     private void updateReceivedData(final String data) {
-        runOnUiThread( new Runnable() {
+        runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mDumpTextView.append("\r\n"+data);
+                mDumpTextView.append("\r\n" + data);
                 mScrollView.smoothScrollTo(0, mDumpTextView.getBottom());
             }
         });

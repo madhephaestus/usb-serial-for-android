@@ -18,7 +18,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79345a8f-0154-4ce8-bb3d-13e639a88614" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java" afterPath="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/BowlerAndroidUSB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/modules.xml" afterPath="$PROJECT_DIR$/../.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -82,18 +81,21 @@
       <file leaf-file-name="SerialConsoleActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45679012" vertical-offset="1995" max-vertical-offset="3390">
-              <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.8610649" vertical-offset="1965" max-vertical-offset="3750">
+              <caret line="219" column="25" selection-start-line="219" selection-start-column="25" selection-end-line="219" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5968#7281#0" expanded="true" />
-                <element signature="e#6871#7181#0" expanded="true" />
-                <element signature="e#7158#7159#0" expanded="true" />
-                <element signature="e#7266#7267#0" expanded="true" />
-                <element signature="e#7481#7700#0" expanded="true" />
-                <element signature="e#7689#7690#0" expanded="true" />
-                <element signature="e#7739#7740#0" expanded="true" />
-                <element signature="e#7765#7766#0" expanded="true" />
+                <element signature="e#3323#3347#0" expanded="true" />
+                <element signature="e#6346#8848#0" expanded="true" />
+                <element signature="e#7553#7910#0" expanded="true" />
+                <element signature="e#7879#7880#0" expanded="true" />
+                <element signature="e#8227#8626#0" expanded="true" />
+                <element signature="e#8587#8588#0" expanded="true" />
+                <element signature="e#8833#8834#0" expanded="true" />
+                <element signature="e#9047#9268#0" expanded="true" />
+                <element signature="e#9257#9258#0" expanded="true" />
+                <element signature="e#9307#9308#0" expanded="true" />
+                <element signature="e#9333#9334#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1481,7 +1483,11 @@
       <created>1425915324996</created>
       <updated>1425915324996</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DyIO events are not propagating to the screen">
+      <created>1425917952217</created>
+      <updated>1425917952217</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1495,14 +1501,14 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3034212" sideWeight="0.18911918" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3034212" sideWeight="0.66234887" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931158" sideWeight="0.28316832" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3034212" sideWeight="0.81088084" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3034212" sideWeight="0.33765113" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18825561" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931158" sideWeight="0.6871287" order="14" side_tool="true" content_ui="tabs" />
@@ -1536,7 +1542,8 @@
     <MESSAGE value="moving the activity files into the build directory" />
     <MESSAGE value="adding the NRSDK" />
     <MESSAGE value="DyIO object is being created and ping events are working" />
-    <option name="LAST_COMMIT_MESSAGE" value="DyIO object is being created and ping events are working" />
+    <MESSAGE value="DyIO events are not propagating to the screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="DyIO events are not propagating to the screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1576,14 +1583,17 @@
           <caret line="177" column="25" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5968#7281#0" expanded="true" />
-            <element signature="e#6871#7181#0" expanded="true" />
-            <element signature="e#7158#7159#0" expanded="true" />
-            <element signature="e#7266#7267#0" expanded="true" />
-            <element signature="e#7481#7700#0" expanded="true" />
-            <element signature="e#7689#7690#0" expanded="true" />
-            <element signature="e#7739#7740#0" expanded="true" />
-            <element signature="e#7765#7766#0" expanded="true" />
+            <element signature="e#3323#3347#0" expanded="true" />
+            <element signature="e#6346#8848#0" expanded="true" />
+            <element signature="e#7553#7910#0" expanded="true" />
+            <element signature="e#7879#7880#0" expanded="true" />
+            <element signature="e#8227#8626#0" expanded="true" />
+            <element signature="e#8587#8588#0" expanded="true" />
+            <element signature="e#8833#8834#0" expanded="true" />
+            <element signature="e#9047#9268#0" expanded="true" />
+            <element signature="e#9257#9258#0" expanded="true" />
+            <element signature="e#9307#9308#0" expanded="true" />
+            <element signature="e#9333#9334#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1628,14 +1638,17 @@
           <caret line="177" column="25" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5968#7281#0" expanded="true" />
-            <element signature="e#6871#7181#0" expanded="true" />
-            <element signature="e#7158#7159#0" expanded="true" />
-            <element signature="e#7266#7267#0" expanded="true" />
-            <element signature="e#7481#7700#0" expanded="true" />
-            <element signature="e#7689#7690#0" expanded="true" />
-            <element signature="e#7739#7740#0" expanded="true" />
-            <element signature="e#7765#7766#0" expanded="true" />
+            <element signature="e#3323#3347#0" expanded="true" />
+            <element signature="e#6346#8848#0" expanded="true" />
+            <element signature="e#7553#7910#0" expanded="true" />
+            <element signature="e#7879#7880#0" expanded="true" />
+            <element signature="e#8227#8626#0" expanded="true" />
+            <element signature="e#8587#8588#0" expanded="true" />
+            <element signature="e#8833#8834#0" expanded="true" />
+            <element signature="e#9047#9268#0" expanded="true" />
+            <element signature="e#9257#9258#0" expanded="true" />
+            <element signature="e#9307#9308#0" expanded="true" />
+            <element signature="e#9333#9334#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1856,20 +1869,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/dyio/DyIOChannel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3327787" vertical-offset="9380" max-vertical-offset="11985">
+          <caret line="716" column="10" selection-start-line="716" selection-start-column="10" selection-end-line="716" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../java-bowler/javasdk/NRSDK/src/com/neuronrobotics/sdk/dyio/peripherals/DigitalInputChannel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52412647" vertical-offset="0" max-vertical-offset="1800">
+          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hoho/android/usbserial/examples/SerialConsoleActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45679012" vertical-offset="1995" max-vertical-offset="3390">
-          <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.8610649" vertical-offset="1965" max-vertical-offset="3750">
+          <caret line="219" column="25" selection-start-line="219" selection-start-column="25" selection-end-line="219" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5968#7281#0" expanded="true" />
-            <element signature="e#6871#7181#0" expanded="true" />
-            <element signature="e#7158#7159#0" expanded="true" />
-            <element signature="e#7266#7267#0" expanded="true" />
-            <element signature="e#7481#7700#0" expanded="true" />
-            <element signature="e#7689#7690#0" expanded="true" />
-            <element signature="e#7739#7740#0" expanded="true" />
-            <element signature="e#7765#7766#0" expanded="true" />
+            <element signature="e#3323#3347#0" expanded="true" />
+            <element signature="e#6346#8848#0" expanded="true" />
+            <element signature="e#7553#7910#0" expanded="true" />
+            <element signature="e#7879#7880#0" expanded="true" />
+            <element signature="e#8227#8626#0" expanded="true" />
+            <element signature="e#8587#8588#0" expanded="true" />
+            <element signature="e#8833#8834#0" expanded="true" />
+            <element signature="e#9047#9268#0" expanded="true" />
+            <element signature="e#9257#9258#0" expanded="true" />
+            <element signature="e#9307#9308#0" expanded="true" />
+            <element signature="e#9333#9334#0" expanded="true" />
           </folding>
         </state>
       </provider>
